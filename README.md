@@ -24,3 +24,19 @@ docker run --rm -it -p 10096:10095 --privileged=true shawoo/funasr:funasr-runtim
 ```
 
 https://github.com/modelscope/FunASR/tree/main/runtime/html5
+
+# nginx
+```code
+  location ~ ^/asr/(\w+) {
+
+     proxy_pass http://asr-server:10095/$1;
+
+     #proxy_set_header X-Real-IP $remote_addr;
+     #proxy_set_header Host $host;
+     #proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+     proxy_http_version 1.1;
+     proxy_set_header Upgrade $http_upgrade;
+     proxy_set_header Connection "upgrade";
+     proxy_set_header Host $host;
+  }
+```code
