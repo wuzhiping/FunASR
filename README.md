@@ -40,4 +40,5 @@ https://github.com/modelscope/FunASR/tree/main/runtime/html5
      proxy_set_header Connection "upgrade";
      proxy_set_header Host $host;
   }
-```code
+
+```
