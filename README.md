@@ -27,9 +27,10 @@ https://github.com/modelscope/FunASR/tree/main/runtime/html5
 
 # nginx
 ```code
-  location ~ ^/asr/(\w+) {
+  location /ASR/ {
 
-     proxy_pass http://asr-server:10095/$1;
+     rewrite ^/ASR/(.*) /$1 break;
+     proxy_pass http://asr-server:10095;
 
      #proxy_set_header X-Real-IP $remote_addr;
      #proxy_set_header Host $host;
