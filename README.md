@@ -22,3 +22,5 @@ docker build -t shawoo/funasr:funasr-runtime-sdk-online-cpu-0.1.12 .
 
 docker run --rm -it -p 10096:10095 --privileged=true shawoo/funasr:funasr-runtime-sdk-online-cpu-0.1.12
 ```
+
+https://github.com/modelscope/FunASR/tree/main/runtime/html5
