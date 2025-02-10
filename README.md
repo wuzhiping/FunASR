@@ -17,4 +17,8 @@ nohup bash run_server_2pass.sh \
   --itn-dir thuduj12/fst_itn_zh \
   --certfile 0 \
   --hotword /workspace/models/hotwords.txt > log.txt 2>&1 &
+
+docker build -t shawoo/funasr:funasr-runtime-sdk-online-cpu-0.1.12 .
+
+docker run --rm -it -p 10096:10095 --privileged=true shawoo/funasr:funasr-runtime-sdk-online-cpu-0.1.12
 ```
